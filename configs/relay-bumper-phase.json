@@ -1,0 +1,40 @@
+{
+  "rationale": "Exploratory intervention motivated by archived striker-state restarts. Change only the isolated launch-bumper handoff. Encode the release-to-impact tick, contact normal, outgoing velocity and spin on a finer clock, return to 480 Hz at the next coarse boundary. Use known geometry only. Keep the receiver and all later contacts on the coarse solver. Compare with full 480 and full 1920 on the same parents.",
+  "confirmation": [
+    145000,
+    48
+  ],
+  "decisions": [
+    146000,
+    48
+  ],
+  "grid": 33,
+  "forecast_hz": [
+    480,
+    1920
+  ],
+  "references_hz": [
+    1920,
+    3840
+  ],
+  "gate": "The upper paired-parent 95% bootstrap bound on mean receiver path RMSE for the handoff minus 480 must be below zero at each reference. Then use the unchanged relay selection rule on a new cohort and report the full 1920 solver alongside it.",
+  "cost": "Report handoff eligibility, exact fine ticks evaluated in the handoff, fixed-step budgets and median timings. Profile sequentially on a fixed subset for latency.",
+  "scope": "Resting vertical release onto an isolated round bumper. Reject geometric ambiguity, missed grazing intersections and any handoff where another object could meet the striker during the local interval. Other initial states use the original solver.",
+  "methods": [
+    "480",
+    "handoff",
+    "1920"
+  ],
+  "selection": {
+    "target_m": 0.35,
+    "margin_m": 0.03,
+    "epsilon_m": 0.005,
+    "offsets_m": [
+      -0.005,
+      -0.0025,
+      0,
+      0.0025,
+      0.005
+    ]
+  }
+}

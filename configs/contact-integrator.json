@@ -1,0 +1,11 @@
+{
+  "version": "contact-subinterval-v1",
+  "date": "2026-11-14",
+  "substeps": [1, 4, 16],
+  "response": "Same analytic restitution/friction and bounded penetration law as the frozen analytic control. Confidence never scales impulse.",
+  "integration": "Bounded fixed subinterval control: sweep, resolve the first simultaneous surface set with fractional impact time, advance to the subinterval end, recompute geometry. Up to N sequential responses per observation interval. Ties update together, with the existing aggregate impulse rule; this is not an exact coupled-contact solver.",
+  "data": "New episode validation originals and the unchanged 26-branch diagnostic suite; no final selector parents.",
+  "events": "Track admission starts at subinterval resolution and retain per-interval counts. Explicitly report multiple eligible surfaces, ties, and onsets still missed below subinterval resolution.",
+  "selection": "No automatic adoption: quantify resolution gains, path tails, locality and runtime. Fixed subdivision isolates resolution without adding a learned residual or a new support law. Adaptive event-driven integration remains a later alternative if this control does not earn its cost.",
+  "selector_boundary": "Fresh selector experiment will retain the shared original 60 Hz mechanics so selector gains cannot be credited to this separate integration study."
+}

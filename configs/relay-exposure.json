@@ -1,0 +1,11 @@
+{
+  "version": "two-ball-relay-exposure-v1",
+  "start_parent": 100000,
+  "parents": 24,
+  "grid": 33,
+  "rates": [1920, 3840],
+  "target_travel_m": 0.35,
+  "horizon_s": 2,
+  "construction": "A falling striker is deflected by the edited round bumper. A receiver rests on the floor. Vary receiver mass, radius and distance and mirror the layout. Test every parent and every edit, including families where no repair exists on the sampled grid.",
+  "witness": "Unedited receiver fails at both rates, edited receiver succeeds at both, and first striker-bumper begin precedes first body-body begin. The positive branch loses success with only the body-body collision disabled. Compare receiver prefixes against its own disabled-pair replay up to but excluding that impact. Choose smallest absolute shift, lower signed shift on ties. Offline feasibility only."
+}

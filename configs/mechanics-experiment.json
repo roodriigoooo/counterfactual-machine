@@ -1,0 +1,42 @@
+{
+  "version": "mechanics-v1",
+  "purpose": "development, not final architecture evidence",
+  "cells": [
+    "soft-window",
+    "soft-release",
+    "swept-window",
+    "swept-release",
+    "swept-local-release"
+  ],
+  "initial_seeds": [
+    0
+  ],
+  "repeat_rule": "repeat structural comparison in both exposure regimes plus local control if finite validation forecasts; no development decision outcome selects cells",
+  "updates": 200,
+  "parent_pairs_per_update": 8,
+  "window_length": 16,
+  "release_length": 120,
+  "training_split": "existing 192 pilot training parents",
+  "checkpoint_selection": "minimum full-release vector position RMSE on 32 validation parents, updates 1/50/100/150/200",
+  "weights": {
+    "physical": 1,
+    "paired_difference": 0.5,
+    "pre_influence_physical": 1,
+    "contact": 0.1,
+    "unsupported_velocity": 0.1
+  },
+  "contact_window_sampling": "50% contact / 50% non-contact source intervals, shifted back 0..7 steps; overlapping labels reported by actual diagnostics",
+  "geometry": "eight ballistic chords, analytic circle/capsule intersections, earliest surface per model interval",
+  "position": "event-time integration and predicted initial penetration resolution, slop 0.001m, cap 0.02m",
+  "score_policy": "learned contact score is auxiliary; geometric admission authorizes mechanics, never score scaling or 0.5 force gate",
+  "capacity": "GRU32 vs two-layer local 32->96->32 control, counts reported",
+  "numerical_fixture_flag": "1920/3840 Hz maximum path difference >0.05m or onset counts differ; retain all flagged cases",
+  "event_match_tolerance_s": 0.03333333333333333,
+  "locality_tolerance_radii": 1e-05,
+  "gate": "improve pre-influence and no-effect mean/p95 against E0 and frozen A on validation, retain contact response/difference sensitivity; inspect ramps and prevalence before T4/T5",
+  "repeat_seeds": [
+    1,
+    2
+  ],
+  "repeat_decision": "All five seed-0 cells had finite validation forecasts; repeat the entire matrix, without selecting on development decisions."
+}

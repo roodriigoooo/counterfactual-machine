@@ -1,0 +1,5 @@
+*.png binary
+*.pt binary
+artifacts/** linguist-generated=true
+artifacts/**/*.svg whitespace=-blank-at-eol
+docs/figures/*.svg linguist-generated=true whitespace=-blank-at-eol

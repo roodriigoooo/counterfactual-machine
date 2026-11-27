@@ -1,0 +1,15 @@
+{
+  "version": "persistent-support-v1",
+  "splits": ["evaluation", "ordinary_evaluation"],
+  "references_hz": [1920, 3840],
+  "threshold_m": 0.025,
+  "consecutive_samples": 6,
+  "one_step_velocity_threshold_m_s": 0.2,
+  "slop_m": 0.001,
+  "comparison": "Frozen continuation cohorts, full two-second releases. Bounded two-impact and four subdivisions as controls. Candidate carries the previous predicted surface into the next interval and tests a single planar support constraint. Curved features, possible other contacts and segment ends use the existing impact law. No simulator history supplied to free forecasts.",
+  "diagnosis": "First run of six consecutive end samples with position disagreement above 25 mm. Record separately for each physics reference, jointly against both, and for the two references themselves. Record first free and coarse exact-state overflow, and first contact interval with at least 0.2 m/s exact-start bounded velocity error preceding joint divergence. These operational landmarks do not identify a unique physical cause.",
+  "report": "Parent-mean within-branch position RMSE and paired 95% bootstrap interval (2000 draws), branch and time error tails; support duration, impulses, onset misses and inventions, and batched release timing. Primary intervention test compares support against bounded; four-step is a descriptive control.",
+  "decision_gate": "Run a fresh fixed-grid comparison if parent-mean full-release RMSE improves with the upper paired 95% bound below zero at both rates in either cohort, and the point change in the other cohort is under 1 mm worse at both rates. Preserve the matched selector, gamma, epsilon, number of candidates and single center verification.",
+  "decision_parents": {"ordinary_start": 92000, "competing_start": 94000, "count_per_family": 48, "goals": 8, "grid": 257, "epsilon_m": 0.005, "gamma_m": 0.03},
+  "fixture_conditions": ["horizontal support", "rolling down an incline", "leaving a finite platform", "repeated floor bounce", "upward separation", "nearby second collider"]
+}

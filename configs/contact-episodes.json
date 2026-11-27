@@ -1,0 +1,17 @@
+{
+  "version": "contact-episodes-v1",
+  "date": "2026-11-14",
+  "parent_pools": {"train": [40000, 160], "validation": [41000, 48]},
+  "strata": ["approach", "ramp", "support", "repeated", "near_miss", "oblique", "competing", "separating"],
+  "branches": 9,
+  "labels": "Occupancy, callback begin, callback separate, callback-active end, impact response (incoming normal speed < -0.2 m/s and positive impulse), support response otherwise. Independent binary labels can coexist. Ordered callbacks retained; no bounded-event truncation.",
+  "cells": {"E0": "Event labels and explicit own-contact geometry", "E1": "E0 plus causal active-at-start episode bit", "E2": "E1 plus competing-surface time, first/second gap, and missing masks"},
+  "seeds": [0, 1, 2],
+  "training": "First 200 exact-state updates with balanced per-output conditional losses, then 100 full-release updates with model-generated episode history and fixed analytic physical states. Shared local encoder/head sizes and initialization. Evaluate after both fixed stages, no checkpoint selection.",
+  "batch_parents": 8,
+  "learning_rate": 0.001,
+  "physics": "Unchanged earliest-surface analytic integrator in every event cell. Event readouts do not scale impulses. This stage tests event representation, not improved mechanics or decision success.",
+  "support": "Report independent parent support and natural prevalence; validate on new matching strata, not a claim about ordinary generator prevalence.",
+  "numerical_audit": "First parent of each stratum in each split, three edits, 1920/3840 Hz; retain sensitive branches.",
+  "promotion": "No demo checkpoint replacement. Integration and tolerance selection are separate studies. No learned mechanical residual before event evidence."
+}

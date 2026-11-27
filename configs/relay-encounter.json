@@ -1,0 +1,43 @@
+{
+  "version": "relay-encounter-v1",
+  "diagnostic": {
+    "archived": "artifacts/impact-decoder/relay-elevated.json",
+    "rates": [
+      1920,
+      3840
+    ],
+    "hz": 480,
+    "matching": "Different-parent matched true hits minimize absolute encounter-time difference. For true misses prefer the 100 ms window, then smallest absolute reference clearance, then time difference. If the window is empty minimize excess time difference first. Controls may recur.",
+    "restart": "Compare free, exact striker, exact receiver, exact pair. Restart both free bodies from forecast or simulator state on the same 480 Hz tick 1, 4, 16, 64 ticks before the earlier observed/forecast first encounter. Evaluate remaining release before the same 2 s deadline. Also restart immediately before and after upstream reference static contact onsets."
+  },
+  "representation": {
+    "train": [
+      140000,
+      64
+    ],
+    "calibration": [
+      141000,
+      39
+    ],
+    "test": [
+      142000,
+      64
+    ],
+    "edits": 17,
+    "forecast_hz": [
+      480,
+      960
+    ],
+    "references_hz": [
+      1920,
+      3840
+    ],
+    "alpha": 0.1,
+    "bootstrap": 2000,
+    "seed": 5721,
+    "target": "Minimum signed disk clearance during the pair-disabled release at both reference clocks. The primary binary label is actual enabled-pair first-contact existence at 1920 Hz; report both clocks and audit the geometric surrogate.",
+    "models": "Hard overlap at 480, 960, and Richardson 2*c960-c480. Student t(2) residual about c960 with constant scale, then a fitted bounded first-order clock correction plus spread conditional on inter-clock disagreement, then the same location with additional context-conditioned log scale. Report constant-scale and contextual bands calibrated on independent parents.",
+    "metrics": "Brier and log score for soft forecasts, parent-paired 95% percentile bootstrap with both references separate; primary comparison contextual minus clock-only Brier at 1920 Hz. Conditional diagnostics within 50 mm of c960=0. Ninety-percent simultaneous bands use one maximum standardized residual per calibration parent across the entire fixed edit grid and both references. Report empirical coverage, width and resolved contact signs on new shelves.",
+    "boundary": "Encoders may use only independent pair-disabled analytic forecasts and known release geometry. Statistical fitting uses training parents only. Bands use calibration parents only. All families in this experiment are mirrored elevated shelves. No goal selection or model promotion from a contact score."
+  }
+}

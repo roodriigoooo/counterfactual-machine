@@ -1,0 +1,11 @@
+{
+  "version": "impact-decoder-v1",
+  "references_hz": [1920,3840],
+  "splits": {"train":[110000,96,32],"validation":[112000,32,16],"evaluation":[114000,80,40]},
+  "parents": "Each split uses the first valid competing parents from its start, and ordinary parents at start+1000. Include original and every legal +/-15 mm sibling. No cross-split parent reuse.",
+  "training": {"seeds":[0,1,2],"updates":300,"checkpoints":[150,300],"batch":96,"lr":0.001,"training_rate":1920},
+  "cells": "Shared bounded two-slot scheduler. Continuous and next-detection-tick clocks. Learned structured and direct contact-state residual decoders share the tick prior, admission, materials, inputs, exact-start training intervals, supervision and sample draws. Corrections only on unique positive-time encounters. Training uses coarse reference. Choose each seed's checkpoint by validation parent-mean full-release RMSE, equal family weight.",
+  "gate": "Primary deployable forecast uses a fixed 1920-Hz physics convention for both references. Against bounded continuous, require upper paired-parent 95% bound below zero at both references in either family, with under 1 mm mean regression in the other. Learned approaches must also pass against the validation-chosen analytic control. Average three prespecified seed errors before parent resampling. Run the existing fixed selector on reserved 92000/94000 families if earned. Report crossed forecast/reference rates separately.",
+  "relay": {"train":[120000,96],"validation":[121000,32],"ordinary":[122000,32],"elevated":[123000,32],"grid":33,"forecast_hz":480,"references_hz":[1920,3840],"target_m":0.35,"probe_resolution_m_s":0.01,"prior_mass":1.375},
+  "relay_study": "Known, shared prior, momentum-ratio estimate and learned mass encoder use one identical two-body solver and edit grid. Probed arms see the same quantized velocity readings from one prior probe. Every fourth parent receives an uninformative probe (both bodies stationary); analytic and learned estimators revert to the prior. Elevated receiver platform is absent from probe model selection and from the ordinary release family. Report full paths, pre-transfer locality, disabled pair and probe cost."
+}

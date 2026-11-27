@@ -1,0 +1,103 @@
+{
+  "scene": {
+    "schema_version": 1,
+    "id": "scene-00001",
+    "parent_id": "parent-00001",
+    "family": "ramp",
+    "seed": 1,
+    "ball": {
+      "id": "ball",
+      "position": [
+        1.5094572997602054,
+        3.575231848162968
+      ],
+      "velocity": [
+        1.7162394190794505,
+        0.0
+      ],
+      "radius": 0.12,
+      "mass": 1.0,
+      "angle": 0.0,
+      "angular_velocity": 0.0,
+      "material": {
+        "friction": 0.4,
+        "restitution": 0.7
+      }
+    },
+    "bumper": {
+      "id": "bumper",
+      "position": [
+        2.5260391571332086,
+        2.0794597788548974
+      ],
+      "radius": 0.32,
+      "material": {
+        "friction": 0.4,
+        "restitution": 0.7
+      }
+    },
+    "segments": [
+      {
+        "id": "floor",
+        "a": [
+          0.1,
+          0.18
+        ],
+        "b": [
+          5.9,
+          0.18
+        ],
+        "radius": 0.04,
+        "material": {
+          "friction": 0.4,
+          "restitution": 0.7
+        }
+      },
+      {
+        "id": "ramp",
+        "a": [
+          1.0594572997602054,
+          3.3352318481629677
+        ],
+        "b": [
+          2.059457299760205,
+          2.935231848162968
+        ],
+        "radius": 0.04,
+        "material": {
+          "friction": 0.4,
+          "restitution": 0.7
+        }
+      }
+    ],
+    "gravity": [
+      0.0,
+      -9.81
+    ],
+    "horizon": 2.0,
+    "world": [
+      6.0,
+      4.0
+    ]
+  },
+  "goal": {
+    "ball_id": "ball",
+    "kind": "reach",
+    "region": {
+      "kind": "disk",
+      "center": [
+        0.8785884855639347,
+        0.6667528349726485
+      ],
+      "radius": 0.44308930031511584,
+      "normal": [
+        1.0,
+        0.0
+      ],
+      "offset": 4.0
+    },
+    "start": 0.0,
+    "end": 2.0,
+    "boundary": "closed_center"
+  }
+}

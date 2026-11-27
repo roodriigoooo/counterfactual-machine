@@ -1,0 +1,6 @@
+{
+  "reason": "Declared after observing zero failures among the 76 ordinary calibration proposals. Exploratory decision transport to the competing-contact generator. No change to the ordinary estimates or frozen event heads.",
+  "calibration": [86000, 64], "evaluation": [88000, 64], "limit": 1500,
+  "acceptance": "Take first valid authored release geometries in seed order, without conditioning on model predictions, outcomes, or event audits. The first half of independent calibration parents fits risk, the second fixes the cutoff.",
+  "goals": 8, "grid": 257, "gamma": 0.03, "epsilon": 0.005, "offsets": [-0.005,-0.0025,0,0.0025,0.005], "coverage_fraction": 0.8
+}

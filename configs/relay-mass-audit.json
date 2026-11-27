@@ -1,0 +1,7 @@
+{
+  "version": "relay-mass-audit-v1",
+  "masses_kg": [0.65, 1.95],
+  "parent_protocol": "configs/relay-exposure.json",
+  "probe": "Separate collision bench in zero gravity, 1 kg calibration disk moving at 1 m/s into the resting receiver. Release geometry, material and object identities are shared between mass arms. Estimate mass from the ratio of observed velocity changes, reporting exact readings and velocities rounded to 0.01 m/s. Exclude receiver mass from the masked input. Give the same calibration observation to any future analytic or learned comparison.",
+  "estimand": "Exploratory paired-mass observability audit on the construction pilot. Score every edit at both reference rates. Condition the descriptive ambiguity bound on both masses having rate-stable goal labels. Compare minimum-absolute shifts on two-rate-successful grid cells for each mass with a common shift that succeeds for both. The grid is an offline oracle."
+}

@@ -1,0 +1,5 @@
+{
+ "status":"Exploratory follow-up specified after inspecting the crossed clock comparison. The primary fixed-1920 forecast failed its two-reference gate. This separate test asks about requiring the same edit to pass forecasts of both numerical conventions.",
+ "confirmation":{"competing":[126000,48],"ordinary":[127000,48],"edit_m":[0,-0.015,0.015],"gate":"Tick must beat continuous on parent-mean path RMSE with a negative upper paired 95% bound at each matching rate in both families. Fresh zero and legal siblings."},
+ "decisions":{"competing":[128000,32],"ordinary":[129000,32],"goals":8,"grid":257,"epsilon_m":0.005,"gamma_m":0.03,"verification":"One coarse center per proposal. Extra fine center and +/-2.5,5 mm at both rates are offline. No retry. Fixed margin and tolerance from prior study. Compare frozen bounded baseline at 1920, two-rate continuous intersection, two-rate tick intersection and validation-representative two-rate joint and direct models."}
+}

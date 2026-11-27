@@ -1,0 +1,20 @@
+{
+  "version": "contact-training-v1",
+  "approved_design": "docs/contact-phase-research.md",
+  "date": "2026-11-14",
+  "data": "data/architecture",
+  "cells": {"P0": 200, "P1": 1000, "P2": 200, "P3": 200, "P4": 200},
+  "seeds": [0, 1, 2],
+  "batch_parents": 8,
+  "learning_rate": 0.001,
+  "checkpoint": "Fixed final update; P1 also saves update 200 to audit identical optimization prefix. No validation checkpoint or contact-threshold selection.",
+  "physical_sampling": "Same original/edited parent pairs and random stream in all cells; complete releases. Old training and validation parents are development evidence only.",
+  "P0": "Original weighted CE divided by valid count, phase loss coefficient 0.1",
+  "P1": "P0 with five times the updates and exposure",
+  "P2": "P0 with weighted CE divided by applied class-weight sum",
+  "P3": "P2 with exact-state phase inputs at identical sampled transitions; other objectives unchanged",
+  "P4": "P3 with parent-uniform, phase-balanced local examples, class-average CE. Valid local-example count matches P3 per update; no inverse weights applied twice. Separate local random stream. This changes objective and sampling together.",
+  "evaluation": "Natural prevalence on all nine validation branches and originals separately; raw, eligibility-masked, earliest-geometry and always-positive-with-eligibility scores; per-class confusion and independent-parent support; exact states and free rollouts. Threshold 0.5 fixed. Physical error/locality and ramp tails retained.",
+  "staging": "Run seed 0 first. Complete all three seeds for the five inexpensive controls before representation changes. Future event/integrator/selector protocols will be frozen separately, before their new data/fits.",
+  "promotion": "No automatic demo promotion. Phase metrics alone do not change physical integration. No final-data tuning or claims of calibrated natural probabilities after balanced sampling."
+}

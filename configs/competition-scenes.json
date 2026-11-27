@@ -1,0 +1,57 @@
+{
+  "version": "competition-scenes-v2",
+  "date": "2026-11-19",
+  "splits": {
+    "train": {
+      "start": 60000,
+      "limit": 1200,
+      "parents": 96
+    },
+    "validation": {
+      "start": 62000,
+      "limit": 500,
+      "parents": 48
+    },
+    "ordinary_train": {
+      "start": 64000,
+      "parents": 64
+    },
+    "ordinary_validation": {
+      "start": 65000,
+      "parents": 64
+    }
+  },
+  "acceptance": "Take the first N independent parents whose unedited release has two swept candidates, exactly one occupied surface with a begin and no prior contact, and a begin on the omitted candidate within the same observation interval when the winning surface is removed. Require the same interval, candidates, winner and isolated loser at 1920 and 3840 Hz.",
+  "gate": {
+    "train": {
+      "witness_parents": 96,
+      "each_winner": 20,
+      "nearest_preempted": 12
+    },
+    "validation": {
+      "witness_parents": 48,
+      "each_winner": 10,
+      "nearest_preempted": 6
+    }
+  },
+  "nearest": "Unique minimum starting surface clearance among eligible surfaces, with a 1 micrometre tie tolerance. Require agreement at both rates for this gate.",
+  "branches_m": [
+    -0.015,
+    0.0,
+    0.015
+  ],
+  "ordinary": "Consecutive seeds from the standard generator, no exposure filter. Record valid edits only. Incidence denominators exclude invalid branches.",
+  "comparison": {
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "updates": 400,
+    "pairs_per_batch": 32,
+    "lr": 0.001,
+    "primary": "Paired enriched validation parent mean difference in binary cross entropy on the two witness candidates (E2 minus E1), using their true states at the first encounter and fixed final weights. Report natural-prevalence ordinary interval metrics and earliest-time and nearest-clearance controls. This local begin-head experiment uses equal counts of confirmed competition intervals and ordinary transitions per batch; half of ordinary samples are begin-centered when available. No readout threshold fitting.",
+    "comparison_details": "Use both the intact and winner-removed worlds for each training witness, plus an equal number of ordinary transitions as witness pairs. Train binary begin BCE on real edges, equal mean loss for witness worlds and ordinary intervals. Primary BCE uses the intact witness candidates; report paired scores of the same omitted surface with and without the winner, tie-aware within-world ordering, geometry controls, and ordinary full-release begin metrics. Also examine legal sibling edits when the target ramp keeps the same pre-contact state and acquires a begin. Actual history may enter exact-state evaluation only. Begin-only head has no trained active-end output; for ordinary free releases use previous analytic surface admission for the history bit in both cells."
+  },
+  "construction": "Symmetric spread of normals around the incoming direction, with a random tilt and a fair swap of the angles before collider assignment. At proposal time neither collider identity nor incidence angle sets the contact order."
+}

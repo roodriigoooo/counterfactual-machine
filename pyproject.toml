@@ -1,0 +1,26 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "counterfactual-machine"
+version = "0.1.0"
+description = "A measured, local baseline for small physical interventions"
+requires-python = ">=3.12,<3.14"
+dependencies = [
+  "numpy>=2.2,<3", "pymunk>=7.2,<8", "pydantic>=2.11,<3",
+  "matplotlib>=3.10,<4", "torch>=2.8,<3", "fastapi>=0.115,<1",
+  "uvicorn>=0.34,<1",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<10", "httpx>=0.28,<1"]
+
+[project.scripts]
+counterfactual = "counterfactual.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/counterfactual"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

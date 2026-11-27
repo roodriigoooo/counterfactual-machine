@@ -1,0 +1,14 @@
+{
+  "version": "contact-continuation-1",
+  "splits": {
+    "train": [72000, 256, 1800], "calibration": [74000, 96, 1000], "evaluation": [76000, 144, 1500],
+    "ordinary_calibration": [78000, 48, 48], "ordinary_evaluation": [79000, 64, 64]
+  },
+  "construction": "First valid original and at least one +/-15 mm edit with identical ball position prefixes and no prior contact at both rates. Two 60 Hz frames from the scheduled construction tick. Ordinary pools are consecutive unedited standard releases.",
+  "minimum_train_evaluation_parent_support": {"created": 6, "removed": 6, "near miss after bumper": 6, "near miss after ramp": 6, "bumper then ramp": 12, "ramp then bumper": 12, "unchanged": 12},
+  "primary": "Parent-mean accuracy for identity of the next distinct surface or no second begin by two frames, free release at the prescheduled tick. Primary branches require a unique first begin and matching order at two rates, no equal-time ties or more than two begins. Parent bootstrap head minus analytic with three seeds retained per parent, 2000 draws. Report all strata separately.",
+  "training": {"seeds": [0,1,2], "updates": 450, "batch": 96, "lr": 0.003, "time_bins": 16, "window_frames": 2},
+  "controls": "Four equal subdivisions per frame, bounded two impact slots per frame with the identical friction/restitution law, gated and ungated sweeps, frozen E2 with positive-slope affine logit calibration on independent enriched and ordinary cohorts. Same analytic paths for conditional heads. Compare parent-averaged hard accuracy, timing, tails, false flips and latency.",
+  "selection": {"calibration": [81000,48], "evaluation": [82000,64], "goals": 8, "grid": 257, "gamma": 0.03, "epsilon": 0.005, "offsets": [-0.005,-0.0025,0,0.0025,0.005], "coverage_fraction": 0.8, "risk_fit": "Separate risk fitting and threshold halves of calibration parents. Two equally sized logistic readouts of worst predicted goal margin and analytic or learned first-encounter features. Compare full final risk/coverage curves and thresholds frozen at 80% of proposed calibration repairs. One selection and no retries."},
+  "follow_up": "Advance event-aligned B/C/D only for a positive lower parent-bootstrap bound on primary learned gain and evidence of decision value or lower cost. Report lower latency independently of learned gain."
+}

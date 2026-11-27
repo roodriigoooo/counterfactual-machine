@@ -1,0 +1,39 @@
+{
+  "question": "Does finer striker integration carry through the complete release and the existing relay selection task?",
+  "family": "elevated shelves, known mass",
+  "confirmation": [
+    143000,
+    32
+  ],
+  "decisions": [
+    144000,
+    48
+  ],
+  "grid": 33,
+  "forecast_hz": [
+    480,
+    1920
+  ],
+  "references_hz": [
+    1920,
+    3840
+  ],
+  "gate": "On confirmation parents, require an upper two-sided paired-parent 95% bootstrap bound below zero for the 1920 minus 480 Hz receiver path RMSE at each reference before running the new decision parents.",
+  "selector": "Use the existing relay benchmark, 350 mm travel target, 30 mm margin, 5 mm tolerance, verified original guard, a single coarse center verification and the same five realized offsets at both rates for offline comparison. Report all initially failing parents including abstentions. Comparing physics rates changes computation; measure whole grid time for each.",
+  "methods": [
+    "480",
+    "1920"
+  ],
+  "selection": {
+    "target_m": 0.35,
+    "margin_m": 0.03,
+    "epsilon_m": 0.005,
+    "offsets_m": [
+      -0.005,
+      -0.0025,
+      0,
+      0.0025,
+      0.005
+    ]
+  }
+}

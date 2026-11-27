@@ -1,0 +1,99 @@
+{
+  "date": "2026-11-27",
+  "tests": "70 passed, one existing Starlette deprecation warning",
+  "lint": "Ruff passed on all edited relay modules and new tests",
+  "environment": {
+    "machine": "arm64",
+    "python": "3.12.12",
+    "numpy": "2.5.4",
+    "pymunk": "7.3.1",
+    "engine": "2.0.1-ade7ed72849e60289eefb7a41e79ae6322fefaf3",
+    "torch": "2.15.0"
+  },
+  "replication": {
+    "parent_files_byte_identical": 199,
+    "aggregate_scientific_records_equal": 8,
+    "comparison": "Independent complete simulation, oracle interventions, refit, calibration and gated decisions in a fresh directory. All non-timing JSON values match exactly. Both decision records verify their own timing-dependent confirmation SHA256. Both non-timing PNGs reproduce byte for byte. The third figure shows measured wall time. All three PNG/SVG/PDF families verified.",
+    "excluded_fields": [
+      "confirmation_sha256",
+      "grid_s",
+      "median_grid_ms",
+      "ms"
+    ]
+  },
+  "archive_sha256": "dafe5f89a82989d0d04c675e670893d2bd513262b13313f327f113c8ca2cc0a4",
+  "verified_prior_scientific_sha256": "13f13385c214c7cc1c5205d6ae3495c61e219a9cae19d4963e618f3f1d4685f0",
+  "parent_files_sha256": "aa9ad7a4a43e0cfcd66880da16527aca92c88e463e2b3b8116dcbb0cb6059789",
+  "parent_hash_definition": "SHA256 of compact JSON array of sorted [basename, file SHA256] pairs",
+  "parent_record_arrays": {
+    "forecast": [
+      "clearance_m",
+      "closest_s",
+      "relative_speed_m_s",
+      "since_impact_s",
+      "impact_count",
+      "last_shelf",
+      "last_floor",
+      "shelf_edge_distance_m"
+    ],
+    "reference": [
+      "clearance_m",
+      "closest_s",
+      "first_enabled_pair_tick_or_minus_one"
+    ]
+  },
+  "source_sha256": {
+    "configs/relay-bumper-phase.json": "60764bd5f8fc9c2bf5485e2cdafe80f9d6dac794ede48261e08e0ada4bab038c",
+    "configs/relay-encounter-decisions.json": "b71d02b0bafad5bf136b48813d6864a0f296882a7f84662e65ed58d04bb454e9",
+    "configs/relay-encounter.json": "6eb1fd5c49c604817c29f0990f3b037970ef849b894b3ba70609e1dff53fc699",
+    "configs/relay-exposure.json": "ef48b95a238524a25ed5be8807a624410940e682f737905eccd34073705b5d01",
+    "configs/relay-mass-audit.json": "e2473fe131411dabdac05e96c3c344add0c372c9b5d81dcb7c8f293dfbfb0f54",
+    "src/counterfactual/cli.py": "ac278c7261a7fea743fc013f18f76134633ce99bb4635228fee8ee310f65a237",
+    "src/counterfactual/relay_benchmark.py": "5c079743a17c40e8d82fd2e09f76af3a1a74114e3c95c88a6729853bd0340ff0",
+    "src/counterfactual/relay_clock_audit.py": "c0e1ae8fa4e06e099cd5c7f0797447ca8b8e424a8b5cf07627fe94fa5ecd924a",
+    "src/counterfactual/relay_encounter.py": "b7a484113e8b924cce9232699aa923a87a1554f46df9327a5c8f3abf67aeff6f",
+    "src/counterfactual/relay_encounter_figures.py": "def1c9f8d7cbdfc70a6ae4509912c599ad067eced8b63eaf2afc877e2aa31ea2",
+    "src/counterfactual/relay_forecast.py": "bc6ac70997300c528e1a7ea9c02514e91731f094eef98a85bf503252bcb25d65",
+    "src/counterfactual/relay_gallery.py": "cf9d6ff9bde7e655ba28f2d2b1a4926814ca5d7e74f412d3568ef8726b7a42a0",
+    "src/counterfactual/relay_launch.py": "7fcb2b275bb3545191191102c251dea2489edd365006412e8434ad180180f6cf",
+    "src/counterfactual/relay_mass.py": "d36e366266ea5fa6651bfdf0b2daa44917cd330948e6b77d5a09eba4584a733d",
+    "src/counterfactual/relay_probability.py": "1770bd4d0988c78cd51682f4ea18d24d631e5e137072640deaa198bb47ca3758",
+    "src/counterfactual/relay_refinement.py": "5956c58978834c65a4d8a7065c02ddbec0a891968a6b2686d6f70c500ee1293c",
+    "src/counterfactual/relay_restarts.py": "68a1d5b7ec50ede96eb395fd38ba628c54d80e8e94a712b429531dea55fa00bc",
+    "src/counterfactual/relay_world.py": "daa767ec6b80bc08bf0f8474d544e200142cfb9e01caedb3626363087a761c52",
+    "tests/test_relay_encounter.py": "ce87b5c8cea9dfcd4ffd815aa731a43f14b8ddd157eceb54bc41efc3b632a7fd"
+  },
+  "artifact_sha256": {
+    "clocks.json": "337aa435234ee95bd8998b2775b68ac6e29eed2695d01c96cd9d5f976e4cc060",
+    "confirmation.json": "0d8915c210d3b3202e0bc2b70f3bf32a4da9f02718bf06c4b368c4f71adf29c0",
+    "decisions.json": "8da67a2749600629356913e3f1fc89ce3bae18dddb583bc9ed82df54e29db001",
+    "diagnosis.json": "975c0fcd3478a14d755ddf93ebd00cc919773df3bf7137692bdc1c3d39aeca07",
+    "handoff-confirmation.json": "53ad4c6046fb793d6d6abea2d5e6b22b93f15eb5380b65e9cc84fd7b80706881",
+    "handoff-decisions.json": "dfd6506a24343e42e09be00d6bd38803878b38b178a16a165ebbff661efacc6c",
+    "probability.json": "a4df2bf5c4b905b48ea889e470f1f93f58b37b8dc346500ecd90e12aeb217bc5",
+    "report-kind.json": "80c0d27479c41547a6e37e7c35303d0487837c45423ea7f81149b3a5d3b020a2"
+  },
+  "figures": {
+    "relay-uncertainty": {
+      "png_sha256": "9c28d88aff13d16339038f8d2674cc43c08f022b8a2fd7b0f0246df031dd5aaf",
+      "dimensions": [
+        2703,
+        753
+      ]
+    },
+    "relay-causes": {
+      "png_sha256": "7162cda9885928b6bee12f35286ed331e2bf4f428fb74f65024b67c7d21f9589",
+      "dimensions": [
+        2703,
+        753
+      ]
+    },
+    "relay-precision": {
+      "png_sha256": "134b015fdbb22f0aeff1ed31f258ed6ddd3f2d71caa09c6b7754ba9fa96e1e68",
+      "dimensions": [
+        2703,
+        753
+      ]
+    }
+  }
+}
